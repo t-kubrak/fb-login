@@ -13,11 +13,7 @@ if(!isset($_SESSION['fb_access_token'])){
 	  'default_graph_version' => 'v2.2',
   ]);
 
-  if(isset($_GET['action']) && $_GET['action'] === 'logout'){
-	  session_destroy();
-	  header('Location: home.php');
-  }
-  echo "<a href=\"?action=logout\">Logout</a>";
+  echo "<a href=\"logout.php\">Logout</a>";
 
   $fb_user = $_SESSION['fb_user'];
   echo nl2br("\n<img src=\"//graph.facebook.com/".$_SESSION['id']."/picture\">\n");
